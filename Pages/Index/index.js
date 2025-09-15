@@ -49,3 +49,12 @@ document.addEventListener("mousemove", e => {
     easing: "easeOutQuad"
   });
 });
+
+
+document.querySelectorAll('.cool-link').forEach(link => {
+  link.addEventListener('mousemove', e => {
+    const rect = e.target.getBoundingClientRect();
+    link.style.setProperty('--x', `${e.clientX - rect.left}px`);
+    link.style.setProperty('--y', `${e.clientY - rect.top}px`);
+  });
+});
